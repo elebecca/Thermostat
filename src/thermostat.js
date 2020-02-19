@@ -19,9 +19,8 @@ Thermostat.prototype.down = function() {
 Thermostat.prototype.powerSaver = function() {
   if (lowPower === true ) {return 25}
   else {return 32}
+};
+
+Thermostat.prototype.reset = function(){
+  this.temperature = 20 ;
 }
-
-var thermostat = new Thermostat()
-
-
-console.log(thermostat.temperature)

@@ -40,4 +40,10 @@ describe('Thermosat', function() {
       expect(thermostat.temperature).toBe(32)
     });
 
+    it('reset the temperatureat 20', function(){
+        thermostat.temperature = 23
+        thermostat.reset()
+        expect(thermostat.temperature).toBe(20)
+    });
+
 });
