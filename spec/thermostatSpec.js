@@ -27,4 +27,10 @@ describe('Thermosat', function() {
       expect(thermostat.temperature).toBe(10)
     })
 
+    it('power saving check the maxiumum temperature 25', function(){
+        thermostat.temperature = 25
+        thermostat.up()
+        expect(thermostat.temperature).toBe(25)
+    });
+
 });
