@@ -46,4 +46,12 @@ describe('Thermosat', function() {
         expect(thermostat.temperature).toBe(20)
     });
 
+    it('getEnergyUsage to return low medium and high for <18, <25 and >=25', function(){
+      expect(thermostat.energyUsage()).toEqual('medium-usage')
+      thermostat.temperature = 17
+      expect(thermostat.energyUsage()).toEqual('low-usage')
+      thermostat.temperature = 25
+      expect(thermostat.energyUsage()).toEqual('high-usage')
+    });
+
 });
