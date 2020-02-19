@@ -21,4 +21,10 @@ describe('Thermosat', function() {
         expect(thermostat.temperature).toBe(19)
     });
 
+    it('check min temp is 10', function(){
+      thermostat.temperature = 10
+      thermostat.down()
+      expect(thermostat.temperature).toBe(10)
+    })
+
 });
