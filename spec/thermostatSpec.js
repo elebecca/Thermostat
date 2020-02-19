@@ -1,10 +1,9 @@
-'use strict';
+
 
 describe('Thermosat', function() {
 
     beforeEach(function() {
         thermostat = new Thermostat();
-
     });
 
     it('check that the thermostat is 20', function(){
@@ -13,6 +12,7 @@ describe('Thermosat', function() {
 
     it('check that increase the temperature', function(){
         thermostat.up()
+        console.log(thermostat.temperature)
         expect(thermostat.temperature).toBe(21)
     });
 
@@ -31,6 +31,13 @@ describe('Thermosat', function() {
         thermostat.temperature = 25
         thermostat.up()
         expect(thermostat.temperature).toBe(25)
+    });
+
+    it('if power saving mode off the maximum temperature should be 32', function(){
+      thermostat.temperature = 32
+      thermostat.lowPower = false
+      thermostat.up()
+      expect(thermostat.temperature).toBe(32)
     });
 
 });
