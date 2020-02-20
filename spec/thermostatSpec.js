@@ -35,7 +35,7 @@ describe('Thermosat', function() {
 
     it('if power saving mode off the maximum temperature should be 32', function(){
       thermostat.temperature = 32
-      thermostat.lowPower = false
+      thermostat.powerSaver()
       thermostat.up()
       expect(thermostat.temperature).toBe(32)
     });

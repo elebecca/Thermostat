@@ -1,22 +1,55 @@
+<!DOCTYPE html>
+<html>
+
 <head>
-    <script type="text/javascript" src="./src/thermostat.js" ></script>
+    
 </head>
+
 <body>
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Thermostat</title>
-      </head>
-      <body>
-        <section>
-          <h1 id="temperature"></h1>
-          <p>
+    <section>
+        <h1 id="temperature"></h1>
+        <p>
+            <h1 id="temperature"></h1>
             <button id="up"> + </button>
             <button id="down"> - </button>
+        </p>
+        <p>            
             <button id="reset"> reset </button>
-            <button id="powersaving">PSM</button>
-          </p>
-        </section>
-      </body>
-    </html>
+            <button id="powersaving">PSM swich</button>
+        </p>
+    </section>
 </body>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="./src/thermostat.js" ></script>
+<script>
+$(document).ready(function(){
+    var thermostat = new Thermostat();
+
+    $('#temperature').text(thermostat.temperature);
+
+    $('#up').click(function() {
+        thermostat.up()
+        $('#temperature').text(thermostat.temperature)
+    });
+
+    $('#down').click(function() {
+        thermostat.down()
+        $('#temperature').text(thermostat.temperature)
+    });
+
+    $('#reset').click(function(){
+        thermostat.reset()
+        $('#temperature').text(thermostat.temperature)
+    });
+
+    $('#powersaving').click(function(){
+        thermostat.powerSaver()
+        $('#temperature').text(thermostat.temperature)
+    });
+
+});
+
+</script>
+
+</html>
