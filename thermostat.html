@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
@@ -26,28 +26,41 @@
 $(document).ready(function(){
     var thermostat = new Thermostat();
 
+    function updateTemperature() {
     $('#temperature').text(thermostat.temperature);
+    }
+    updateTemperature()
 
     $('#up').click(function() {
         thermostat.up()
-        $('#temperature').text(thermostat.temperature)
+        updateTemperature()
     });
 
     $('#down').click(function() {
         thermostat.down()
-        $('#temperature').text(thermostat.temperature)
+        updateTemperature()
     });
 
     $('#reset').click(function(){
         thermostat.reset()
-        $('#temperature').text(thermostat.temperature)
+        updateTemperature()
     });
 
     $('#powersaving').click(function(){
         thermostat.powerSaver()
-        $('#temperature').text(thermostat.temperature)
+        updateTemperature()
     });
 
+    function updateTemperature() {
+        $('#temperature').text(thermostat.temperature);
+        if(thermostat.energyUsage()=== 'low-usage') {
+            $('#temperature').css('color','green')
+        } else if(thermostat.energyUsage() === 'medium-usage') {
+            $('#temperature').css('color', 'black')
+        } else {
+            $('#temperature').css('color', 'red')
+        }
+    }
 });
 
 </script>
