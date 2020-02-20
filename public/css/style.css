@@ -1,1 +1,42 @@
-body {background-color: coral;}
+body {
+    font-family:arial;
+    background: #005AA7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+section{
+    width: 45%;
+    height:100%;
+    background-color:#eef0d8;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+h1{
+    font-size: 200px;
+    margin: 10px;
+}
+p{
+    font-size: 20px;
+}
+#down{
+    background: #90e3d8;
+    width: 70px;
+    margin: 10px;
+}
+#up{
+    background: #dd993d;
+    width: 70px;
+}
+#reset{
+    background:white;
+    width: 70px;
+    margin-bottom: 30px;
+}
+#powersaving{
+    margin-left: 7px;
+}
